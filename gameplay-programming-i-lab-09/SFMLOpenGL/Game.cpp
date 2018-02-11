@@ -58,32 +58,32 @@ void Game::run()
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		{
-			m_matrix = m_matrix.translate(-0.001, 0, 1.1);
+			m_matrix = m_matrix.translate(-0.001, 0);
 			transformation(m_matrix);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		{
-			m_matrix = m_matrix.translate(0.001, 0, 5);
+			m_matrix = m_matrix.translate(0.001, 0);
 			transformation(m_matrix);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 		{
-			m_matrix = m_matrix.translate(0, 0.001, 5);
+			m_matrix = m_matrix.translate(0, 0.001);
 			transformation(m_matrix);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 		{
-			m_matrix = m_matrix.translate(0, -0.001, 5);
+			m_matrix = m_matrix.translate(0, -0.001);
 			transformation(m_matrix);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift))
 		{
-			m_matrix = m_matrix.scale(99.000001, 99.000001);
+			m_matrix = m_matrix.scale(99.000001, 99.000001,99.000001);
 			transformation(m_matrix);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Comma))
 		{
-			m_matrix = m_matrix.scale(101, 101);
+			m_matrix = m_matrix.scale(101, 101,101);
 			transformation(m_matrix);
 		}
 		update();
@@ -182,6 +182,7 @@ void Game::initialize()
 	vertex[7].color[1] = 1.0f;
 	vertex[7].color[2] = 0.0f;
 
+
 	//front
 	triangles[0] = 0;   triangles[1] = 1;   triangles[2] = 2;
 	triangles[3] = 3;   triangles[4] = 0;   triangles[5] = 2;
@@ -190,22 +191,21 @@ void Game::initialize()
 	triangles[6] = 5;	triangles[7] = 1;	triangles[8] = 0;
 	triangles[9] = 5;	triangles[10] = 0;	triangles[11] = 4;
 
-	//Back
-	triangles[12] = 6;	triangles[13] = 5;	triangles[14] = 4;
-	triangles[15] = 6;	triangles[16] = 4;	triangles[17] = 7;
+	//Right
+	triangles[12] = 7;	triangles[13] = 4;	triangles[14] = 0;
+	triangles[15] = 7;	triangles[16] = 0;	triangles[17] = 3;
+
+	//Left
+	triangles[18] = 2;	triangles[19] = 1;	triangles[20] = 5;
+	triangles[21] = 2;	triangles[22] = 5;	triangles[23] = 6;
 
 	//Bottom
-	triangles[18] = 2;	triangles[19] = 6;	triangles[20] = 7;
-	triangles[21] = 2;	triangles[22] = 7;	triangles[23] = 3;
+	triangles[24] = 2;	triangles[25] = 6;	triangles[26] = 7;
+	triangles[27] = 2;	triangles[28] = 7;	triangles[29] = 3;
 
-	//right
-	triangles[24] = 7;	triangles[25] = 4;	triangles[26] = 0;
-	triangles[27] = 7;	triangles[28] = 0;	triangles[29] = 3;
-
-	//left
-	triangles[30] = 2;	triangles[31] = 1;	triangles[32] = 5;
-	triangles[33] = 2;	triangles[34] = 5;	triangles[35] = 6;
-
+	//Back
+	triangles[30] = 6;	triangles[31] = 5;	triangles[32] = 4;
+	triangles[33] = 6;	triangles[34] = 4;	triangles[35] = 7;
 
 	/* Create a new VBO using VBO id */
 	glGenBuffers(1, vbo);

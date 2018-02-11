@@ -26,8 +26,8 @@ public:
 	MyMatrix3 inverse()const;
 	MyMatrix3 transpose()const;
 	MyMatrix3 rotation(double angle)const;
-	MyMatrix3 translate(double dx, double dy, double dz)const;
-	MyMatrix3 scale(double dx, double dy)const;
+	MyMatrix3 translate(double dx, double dy)const;
+	MyMatrix3 scale(double dx, double dy, double dz)const;
 	MyMatrix3 operator-();
 
 	MyMatrix3 rotationX(double angle)const;

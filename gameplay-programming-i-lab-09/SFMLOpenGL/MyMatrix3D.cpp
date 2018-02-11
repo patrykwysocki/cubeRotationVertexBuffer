@@ -195,20 +195,20 @@ MyMatrix3 MyMatrix3::rotationZ(double angle) const
 }
 
 //returns the matrix to multiply by to translate a vector
-MyMatrix3 MyMatrix3::translate(double dx, double dy,double dz) const
+MyMatrix3 MyMatrix3::translate(double dx, double dy) const
 {
 	return MyMatrix3(1, 0, dx,
 		0, 1, dy,
-		0, 0, dz);
+		0, 0, 1);
 
 }
 
 //f returns the matrix to multiply by to scale a vector
-MyMatrix3 MyMatrix3::scale(double dx, double dy) const
+MyMatrix3 MyMatrix3::scale(double dx, double dy,double dz) const
 {
 	return MyMatrix3(static_cast<double>(dx / 100), 0, 0,
 		0, static_cast<double>(dy / 100), 0,
-		0, 0, 1);
+		0, 0, static_cast<double>(dy/100));
 }
 
 //returns the matrix to multiply by to scale a vector in 3D
